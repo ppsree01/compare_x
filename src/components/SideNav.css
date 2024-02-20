@@ -1,0 +1,25 @@
+.sidenav-container {
+    width: 80px;
+    color: white;
+    background-color: black;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.sidenav-container:hover {
+    width: 200px;
+}
+
+.sidenav-menu-item {
+    font-weight: bold;
+    padding: 1em;
+    margin: 1em;
+}
+
+
+
