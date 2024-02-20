@@ -4,6 +4,7 @@ import Search from './components/Search';
 import SideNav from './components/SideNav';
 import { MonthSet } from './constants/constants';
 import './App.css';
+import TopNav from './components/TopNav';
 
 const App = () => {
 	const [month, setMonth] = useState('February');
@@ -55,6 +56,7 @@ const App = () => {
 				<SideNav />
 			</div>
 			<div className='app-content'>
+				<TopNav />
 				<Search updateView={handleSearch}/>
 				<View heading={month + ' Comparison'} items={monthlyView} />
 				<View heading={'Overall Comparison'} items={overallView} />

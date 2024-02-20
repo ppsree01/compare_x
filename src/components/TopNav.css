@@ -1,0 +1,23 @@
+.topnav-container {
+    height: 2em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 1em 6em 1em 6em;
+    background-color: white;
+    box-shadow: 0 4px 2px -2px #ebe9e8;
+}
+
+.topnav-title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.topnav-btn {
+    background-color: #ff3620;
+    border: 1px solid #ff3620;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    padding: 0em 3em;
+}
