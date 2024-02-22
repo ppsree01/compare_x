@@ -1,3 +1,7 @@
+.parent {
+	width: 100%;
+}
+
 .app-body {
 	display: flex;
 	flex-flow: row nowrap;
@@ -6,10 +10,19 @@
 	height: 100vh;
 }
 
-.app-nav {
-	/* width: 10%; */
-}
-
 .app-content {
 	width: 100%;
+	overflow-y: scroll;
+}
+
+.app-product-compare {
+	display: flex;
+	width: 30%;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+
+.app-view {
+    margin: 1em 6em 1em 6em;
+	overflow-y: scroll;
 }

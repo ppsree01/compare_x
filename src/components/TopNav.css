@@ -6,6 +6,9 @@
     padding: 1em 6em 1em 6em;
     background-color: white;
     box-shadow: 0 4px 2px -2px #ebe9e8;
+    position: sticky;
+    overflow: hidden;
+    top: 0;
 }
 
 .topnav-title {

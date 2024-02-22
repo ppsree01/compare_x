@@ -1,7 +1,7 @@
 .search-container {
     display: flex;
     flex-flow: row nowrap;
-    margin: 1em 6em 1em 6em;
+    margin-top: 1em;
 }
 
 .search-input {
@@ -10,6 +10,7 @@
     border: 1px solid white;
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
+    text-indent: 1em;
 }
 
 .search-btn {
@@ -28,6 +29,6 @@
 }
 
 ::placeholder {
-    padding-left: 1em;
+    /* padding-left: 1em; */
     color: #9fa6b2;
 }
