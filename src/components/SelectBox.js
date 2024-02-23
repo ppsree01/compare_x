@@ -1,22 +1,25 @@
-import { useState } from "react";
 import './SelectBox.css';
 // select box:
 
-const SelectBox = ({ options }) => {
+const SelectBox = ({ options, handleSelectionChange }) => {
+
+    const handleChange = (e) => {
+        handleSelectionChange(e.target.value);
+    }
 
     const availableOptions = () => {
         let listItems = [];
         for (let i in options) {
             if (i == 0) {
-                listItems.push(<option value={options[i]} selected>Product {options[i]}</option>)
+                listItems.push(<option key={i} value={options[i]} defaultValue={options[i]}>Product {options[i]}</option>)
             }
-            listItems.push(<option value={options[i]}>Product {options[i]}</option>)
+            listItems.push(<option key={i} value={options[i]}>Product {options[i]}</option>)
         }
         return listItems;
     }
 
     return (
-        <select className='select-box'>
+        <select className='select-box' onChange={handleChange}>
             {availableOptions()}            
         </select>
     )
