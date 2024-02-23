@@ -17,12 +17,16 @@
 
 .app-product-compare {
 	display: flex;
-	width: 30%;
 	flex-flow: row nowrap;
-	justify-content: space-between;
+	justify-content: flex-start;
+}
+
+.app-product-label {
+	font-size: 1.3em;
+	margin: 1.1em 0em;
 }
 
 .app-view {
-    margin: 1em 6em 1em 6em;
+    margin: 1em 8em 1em 8em;
 	overflow-y: scroll;
 }

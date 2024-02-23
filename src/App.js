@@ -1,99 +1,103 @@
-import { useEffect, useReducer, useState } from 'react';
+import { useEffect, useState } from 'react';
 import View from "./components/View";
 import Search from './components/Search';
 import SideNav from './components/SideNav';
-import { MonthSet } from './constants/constants';
+import { months, getCurrentMonth } from './utils/utils';
 import './App.css';
 import TopNav from './components/TopNav';
 import SelectBox from './components/SelectBox';
+import { useSelector, useDispatch } from 'react-redux';
+import { filter } from './features/filter/filterSlice';
 
 const App = () => {
-	const [month, setMonth] = useState('February');
-	// const [view, dispatch] = useReducer(viewReducer, { all: [], filtered: [] });
 
-	const [monthlyView, setMonthlyView] = useState({ all: [], filtered: [] });
-	const [overallView, setOverallView] = useState({ all: [], filtered: [] });
+	const [month, setMonth] = useState(getCurrentMonth());
+	const [productOne, setProductOne] = useState('A');
+	const [productTwo, setProductTwo] = useState('B');
+	const [valid, setValid] = useState(true);
 
-	const [productOne, setProductOne] = useState('Product A');
-	const [productTwo, setProductTwo] = useState('Product B');
-
+	const monthly = useSelector((state) => state.filter.filteredMonthly);
+	const overall = useSelector((state) => state.filter.filteredOverall);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
-		getData(month);
-	}, [month]);
+		getData(month, productOne, productTwo);
+	}, [month, productOne, productTwo]);
 
-	const getData = (month) => fetch('data/data.json')
+	const getData = (month, productOne, productTwo) => fetch('data/data.json')
 		.then( response => response.json() )
 		.then( response => response['monthly_comparison'] )
 		.then( response => {
-			setMonthlyView({all: response[month]['CompareAB'], filtered: response[month]['CompareAB'] });
-			setOverallView({
-				all: [...response[month]['CompareAB'], ...response[month]['CompareAB']],
-				filtered: [...response[month]['CompareAB'], ...response[month]['CompareAB']]
-			});
+			dispatch(filter({
+				type: 'RELOAD',
+				data: response,
+				month, productOne, productTwo
+			}));
 		});
 
-	const handleSearch = (searchTerm) => {
-		if (!searchTerm) {
-			setMonth('February');
-		} else if (MonthSet.has(searchTerm)) {
-			setMonth(searchTerm);
+
+	const handleSearch = (text) => {
+		if (months.indexOf(text) > -1) {
+			setMonth(text);
 		} else {
-
-			let all = monthlyView.all;
-			setMonthlyView({ ...monthlyView, filtered: [...all] });
-			all = overallView.all;
-			setOverallView({ ...overallView, filtered: [...all]});
-
-			// text search
-			let filteredMonthly = [];
-			let filteredOverall = []
-			for (let entry of monthlyView.filtered) {
-				if (entry.indexOf(searchTerm) > - 1) {
-					filteredMonthly.push(entry);
-				} 
+			let action = {
+				type: 'TEXT',
+				text,
 			}
-
-			for (let entry of overallView.filtered) {
-				if (entry.indexOf(searchTerm) > - 1) {
-					filteredOverall.push(entry);
-				} 
-			}
-
-			setMonthlyView({ ...monthlyView, filtered: filteredMonthly });
-			setOverallView({ ...overallView, filtered: filteredOverall });
+			dispatch(filter(action));
 		}
 	}
 
-	let options = ['Product B', 'Product C', 'Product D'];
-	const handleProductOneChange = (option) => {
-		setProductOne(option);
+	const options = ['A', 'B', 'C', 'D'];
+
+	const handleProductOneChange = (selectedProduct) => {
+		if (selectedProduct == productTwo) {
+			setValid(false);
+		} else {
+			if (!valid) {
+				setValid(true);
+			}
+			setProductOne(selectedProduct);
+		}
 	}
 
-	const handleProductTwoChange = (option) => {
-		setProductTwo(option);
+	const handleProductTwoChange = (selectedProduct) => {
+		if (selectedProduct == productOne) {
+			setValid(false);
+		} else {
+			if (!valid) {
+				setValid(true);
+			}
+			setProductTwo(selectedProduct);
+		}
 	}
 
 	return (
 		<div className='parent'>
-		<div className="app-body">
-			<div className='app-nav'>
-				<SideNav />
-			</div>
-			<div className='app-content'>
-				<TopNav />
-				<div className='app-view'>
-					<div className='app-product-compare'>
-						<SelectBox selected={'Product A'} options={options} updateSelection={handleProductOneChange} />
-						<SelectBox selected={'Product B'} options={options} updateSelection={handleProductOneChange} />
-					</div>
-					<Search updateView={handleSearch}/>
-					<View heading={month + ' Comparison'} items={monthlyView.filtered} />
-					<View heading={'Overall Comparison'} items={overallView.filtered} />
+			<div className="app-body">
+				<div className='app-nav'>
+					<SideNav />
 				</div>
+				<div className='app-content'>
+					<TopNav />
+					<div className='app-view'>
+						<div className='app-product-label'>
+							<label>What would you like to compare today?</label>
+						</div>
+						<div className='app-product-compare'>
+							<SelectBox selected={productOne} options={options} handleSelectionChange={handleProductOneChange} />
+							<SelectBox selected={productTwo} options={options} handleSelectionChange={handleProductTwoChange} />
+						</div>
+						{ !valid && <>Choose two different products to continue</>}
+						{ valid && <div>
+							<Search updateView={handleSearch}/>
+							<View heading={month + ' Comparison'} items={monthly} />
+							<View heading={'Overall Comparison'} items={overall} />
+						</div> }
+					</div>
 
+				</div>
 			</div>
-		</div>
 		</div>
 	);
 }

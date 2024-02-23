@@ -3,17 +3,24 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    padding: 1em 6em 1em 6em;
     background-color: white;
     box-shadow: 0 4px 2px -2px #ebe9e8;
+    padding: 1em 1em 1em 8em;
     position: sticky;
     overflow: hidden;
     top: 0;
 }
 
 .topnav-title {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: bold;
+}
+
+.topnav-header-btn {
+    display: flex;
+    width: 88%;
+    flex-direction: row nowrap;
+    justify-content: space-between;
 }
 
 .topnav-btn {
