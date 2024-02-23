@@ -5,6 +5,9 @@ const View = ({ heading, items }) => {
 
     const showListItems = () => {
         let listItems = [];
+        if (!items) {
+            return listItems;
+        }
         for (let i=0; i<items.length; i++) {
             listItems.push( 
                 <>
