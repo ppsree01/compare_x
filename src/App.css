@@ -30,3 +30,9 @@
     margin: 1em 8em 1em 8em;
 	overflow-y: scroll;
 }
+
+.app-error-msg {
+	margin: 1em 0em;
+	color: red;
+	font-weight: bold;
+}

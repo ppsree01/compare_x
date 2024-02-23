@@ -16,7 +16,7 @@ const SelectBox = ({ selected, options, handleSelectionChange }) => {
     }
 
     return (
-        <select className='select-box' defaultValue={selected} onChange={handleChange}>
+        <select className='select-box' value={selected} onChange={handleChange}>
             {availableOptions()}            
         </select>
     )

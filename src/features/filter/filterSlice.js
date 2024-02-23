@@ -99,6 +99,10 @@ function filterByText(data, text) {
 const months = ["January", "February", "March", "April", "May", "June", "July",
     "August", "September", "October", "November", "December"];
 function filterByMonthOrProduct(data, month, productOne, productTwo) {
+    if (productOne == productTwo) {
+        return [[], []]
+    }
+
     // data = { "Jan": [] ... "selectedMonth": [] }
     let key = `Compare${productOne}${productTwo}`;
     if (!data[month].hasOwnProperty(key)) {

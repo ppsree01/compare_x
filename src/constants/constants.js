@@ -10,3 +10,5 @@ export const userOptionsMenu = [
     { inactive: '/images/message-icon-inactive.png', active: '/images/message-icon-active.png', nav: 'Message', selected: false },
     { inactive: '/images/logout-icon-inactive.png', active: '/images/logout-icon-active.png', nav: 'Logout', selected: false }
 ]
+
+export const options = ['A', 'B', 'C', 'D'];
