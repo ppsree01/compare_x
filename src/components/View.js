@@ -10,11 +10,13 @@ const View = ({ heading, items }) => {
         }
         for (let i=0; i<items.length; i++) {
             listItems.push( 
-                <>
-                    <li className='view-listitem' key={i}> { items[i] }</li> 
-                    <hr color='#ebe7e5' size='1.5' />
-                </>
+                <li className='view-listitem' key={'item' + i}> { items[i] }</li> 
             );
+            if (i != items.length - 1) {
+                listItems.push(
+                    <hr key={'hr' + i} color='#ebe7e5' size='1.5' />
+                )
+            }
         }
         return listItems;
     }

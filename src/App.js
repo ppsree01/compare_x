@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import View from "./components/View";
 import Search from './components/Search';
 import SideNav from './components/SideNav';
-import { months } from './utils/utils';
+import { months, getCurrentMonth } from './utils/utils';
 import './App.css';
 import TopNav from './components/TopNav';
 import SelectBox from './components/SelectBox';
@@ -11,7 +11,7 @@ import { filter } from './features/filter/filterSlice';
 
 const App = () => {
 
-	const [month, setMonth] = useState('February');
+	const [month, setMonth] = useState(getCurrentMonth());
 	const [productOne, setProductOne] = useState('A');
 	const [productTwo, setProductTwo] = useState('B');
 	const [valid, setValid] = useState(true);
@@ -81,6 +81,9 @@ const App = () => {
 				<div className='app-content'>
 					<TopNav />
 					<div className='app-view'>
+						<div className='app-product-label'>
+							<label>What would you like to compare today?</label>
+						</div>
 						<div className='app-product-compare'>
 							<SelectBox selected={productOne} options={options} handleSelectionChange={handleProductOneChange} />
 							<SelectBox selected={productTwo} options={options} handleSelectionChange={handleProductTwoChange} />

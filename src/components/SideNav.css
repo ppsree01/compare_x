@@ -19,7 +19,18 @@
     font-weight: bold;
     padding: 1em;
     margin: 1em;
+    display: flex;
+    justify-content: flex-start;
+    pointer-events: none;
 }
 
+.sidenav-menu {
+    pointer-events: none;
+}
 
+.sidenav-menu-label {
+    font-weight: bold;
+    color: white;
+    margin-left: 2em;
+}
 
