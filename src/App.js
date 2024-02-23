@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState } from 'react';
+import { useEffect, useState } from 'react';
 import View from "./components/View";
 import Search from './components/Search';
 import SideNav from './components/SideNav';
@@ -82,8 +82,8 @@ const App = () => {
 					<TopNav />
 					<div className='app-view'>
 						<div className='app-product-compare'>
-							<SelectBox options={options} handleSelectionChange={handleProductOneChange} />
-							<SelectBox options={options} handleSelectionChange={handleProductTwoChange} />
+							<SelectBox selected={productOne} options={options} handleSelectionChange={handleProductOneChange} />
+							<SelectBox selected={productTwo} options={options} handleSelectionChange={handleProductTwoChange} />
 						</div>
 						{ !valid && <>Choose two different products to continue</>}
 						{ valid && <div>
