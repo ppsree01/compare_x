@@ -48,10 +48,7 @@
     bottom: 15px;
 }
 
-.chat-msg-assistant {
-
-}
-
-.chat-msg-user {
-
+.chat-content {
+    padding: 1em;
+    overflow-y: auto;
 }
