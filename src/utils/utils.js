@@ -43,3 +43,21 @@ export function filterByMonthOrProduct(data, month, productOne, productTwo) {
 
     return [monthly, overall];
 }
+
+export function generateCsv(month, monthly, overall) {
+    let rows = [];
+
+    rows.push(`Monthly and Overall Report for ${month}`);
+    rows.push("");
+    rows.push(`Monthly Data`);
+    for (let entry of monthly) {
+        rows.push(`"${entry}"`);
+    }
+    rows.push("");
+    rows.push(`Overall Data`);
+    for (let entry of overall) {
+        rows.push(`"${entry}"`);
+    }
+    let csvContent = `data:text/csv;charset=utf-8,${rows.join("\n")}`;
+    return csvContent;
+}

@@ -15,7 +15,7 @@ const Chat = () => {
     const sendChat = () => {
         let newChatList = [...chatList];
         newChatList.push(
-            <ChatMessage user='user' msg={value} />
+            <ChatMessage key={newChatList.length + 1} user='user' msg={value} />
         )
         updateChatList([...newChatList]);
         setValue('');

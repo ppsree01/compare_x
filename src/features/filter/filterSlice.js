@@ -9,7 +9,8 @@ export const filterSlice = createSlice({
             overall: []
         },
         filteredMonthly: [],
-        filteredOverall: [] 
+        filteredOverall: [],
+        month: ''
     },
     reducers: {
         filter: filterValues
@@ -34,7 +35,8 @@ function filterValues(state, action) {
                         monthly, overall
                     },
                     filteredMonthly: monthly,
-                    filteredOverall: overall
+                    filteredOverall: overall,
+                    month
                 }
             }
         

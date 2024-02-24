@@ -6,7 +6,7 @@ Running the above code locally generates a UI that looks like the below:
 
 ## Features:
 
-| S.N | Required | Features | Description |
+| S.N | Type | Features | Description |
 | ---- | ---- | ---- | ---- |
 | 1 | Required | Month Search | Enter a month in the capitalised format ( eg: "January" without quotes ) in the search box to show monthly overall data for the entered month and for the selected products | 
 | 2 | Required | Text Search | Enter any text ( apart from capitalised format of months ) to enable a text search in the current monthly and overall view |
@@ -15,3 +15,6 @@ Running the above code locally generates a UI that looks like the below:
 | 5 | Bonus | Chat-bot | A chat-bot appears at the bottom right corner of the UI available on click of a button |
 | 6 | Bonus | Side Nav Expand on hover | Side nav expands on hover in desktop view ( or click on tablet view ) and displays details of the navigation |
 | 7 | Bonus | TopNav Download Report button implementation | Downloads a report on click |
+
+## Note:
+The UI is currently configured for desktop and tablet ( landscape ) mode.
