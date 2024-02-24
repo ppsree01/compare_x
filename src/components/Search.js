@@ -8,13 +8,18 @@ const Search = ({ updateView }) => {
         setValue(event.target.value);
     }
 
+    const submitSearch = () => {
+        updateView(value);
+        setValue('');
+    }
+
     return (
         <div className='search-container'>
             <input placeholder='What can we help you find?' 
                 className='search-input' 
                 value={value} 
                 onChange={handleChange} />
-            <button className='search-btn' onClick={() => updateView(value)}>Search</button>
+            <button className='search-btn' onClick={() => submitSearch()}>Search</button>
         </div>
     );
 }

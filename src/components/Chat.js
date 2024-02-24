@@ -31,7 +31,6 @@ const Chat = () => {
                         <div className='chat-content'>
                             <ChatMessage user='ai' msg='Hey! How can I help you today ?' />
                             {chatList}
-                            {/* <ChatMessage user='user' msg='How do I compare products?' /> */}
                         </div>
                         <div className='chat-textbox'>
                             <img src='/images/plus-icon.png' width='25px' height='25px' onClick={sendChat}/>

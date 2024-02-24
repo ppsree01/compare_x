@@ -1,70 +1,17 @@
-# Getting Started with Create React App
+# Compare_X ( UI )
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview:
+Running the above code locally generates a UI that looks like the below:
+![alt text](./CompareX_UI.png)
 
-## Available Scripts
+## Features:
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| S.N | Required | Features | Description |
+| ---- | ---- | ---- | ---- |
+| 1 | Required | Month Search | Enter a month in the capitalised format ( eg: "January" without quotes ) in the search box to show monthly overall data for the entered month and for the selected products | 
+| 2 | Required | Text Search | Enter any text ( apart from capitalised format of months ) to enable a text search in the current monthly and overall view |
+| 3 | Required | Filter by Product | On initial load, the Select boxes are configured to compare Products A and B. Change the selection here to fetch data for two other products. Choosing the same Product renders an error message |
+| 4 | Required | Monthly and Overall View | Based on the selection made on Products and Search box, the view should filter the search results. Product Selection overrides text search, but retains Month search |
+| 5 | Bonus | Chat-bot | A chat-bot appears at the bottom right corner of the UI available on click of a button |
+| 6 | Bonus | Side Nav Expand on hover | Side nav expands on hover in desktop view ( or click on tablet view ) and displays details of the navigation |
+| 7 | Bonus | TopNav Download Report button implementation | Downloads a report on click |
