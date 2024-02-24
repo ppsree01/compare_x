@@ -92,8 +92,8 @@ const App = () => {
 						{ !valid && <div className='app-error-msg'>Choose two different products to continue</div>}
 						{ valid && <div>
 							<Search updateView={handleSearch}/>
-							<View heading={month + ' Comparison'} items={monthly} />
-							<View heading={'Overall Comparison'} items={overall} />
+							<View heading={month + ' Comparison'} items={monthly} productOne={productOne} productTwo={productTwo}/>
+							<View heading={'Overall Comparison'} items={overall} productOne={productOne} productTwo={productTwo}/>
 						</div> }
 					</div>
 				</div>
