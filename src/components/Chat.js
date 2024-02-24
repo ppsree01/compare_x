@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 const Chat = () => {
 
-    const [visibility, setVisibility] = useState(true);
+    const [visibility, setVisibility] = useState(false);
 
     const handleVisibility = () => {
         setVisibility(!visibility);

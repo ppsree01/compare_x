@@ -74,7 +74,6 @@ const App = () => {
 
 	return (
 		<div className='parent'>
-
 			<div className="app-body">
 				<div className='app-nav'>
 					<SideNav />

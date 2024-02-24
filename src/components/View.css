@@ -7,6 +7,11 @@
 
 .view-listitem {
     list-style-type: none;
+    display: flex;
+}
+
+.view-listitem img {
+    padding-right: 0.5em;
 }
 
 hr   {
