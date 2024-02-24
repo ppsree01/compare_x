@@ -23,7 +23,7 @@ const SideNav = () => {
             </div>
             <div className='sidenav-menu'>
                 { userOptionsMenu.map( (item, index) => 
-                    <div key={index} className='sidenav-menu-item' key={index}>
+                    <div key={index} className='sidenav-menu-item'>
                         <img width='20' src={ item.selected ? item.active : item.inactive } />
                         <span className='sidenav-menu-label'>{ expanded && item.nav }</span>
                     </div>

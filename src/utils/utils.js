@@ -5,3 +5,7 @@ export function getCurrentMonth() {
     let date = new Date();
     return months[date.getMonth()];
 }
+
+export function randomize() {
+    return Math.floor(Math.random() * 10); 
+}

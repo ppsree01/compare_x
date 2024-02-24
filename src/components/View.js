@@ -1,7 +1,11 @@
 import './View.css';
+import { randomize } from '../utils/utils';
 
 // should return a heading, and a list of the comparisons obtained with icons for bugs / information
 const View = ({ heading, items }) => {
+
+    const bugItem = <img src='/images/bug_icon.png' width='20' height='20' />
+    const newItem = <img src='/images/new_icon.png' width='20' height='20' />
 
     const showListItems = () => {
         let listItems = [];
@@ -10,7 +14,10 @@ const View = ({ heading, items }) => {
         }
         for (let i=0; i<items.length; i++) {
             listItems.push( 
-                <li className='view-listitem' key={'item' + i}> { items[i] }</li> 
+                <li className='view-listitem' key={'item' + i}> 
+                    { randomize() % 2 == 0 ? bugItem : newItem}
+                    { items[i] }
+                </li> 
             );
             if (i != items.length - 1) {
                 listItems.push(

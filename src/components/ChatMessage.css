@@ -1,0 +1,25 @@
+
+.chat-msg {
+    display: flex;
+    align-items: center;
+    height: 80%;
+}
+
+.chat-msg img {
+    border-radius: 50%;
+}
+
+.chat-left {
+    justify-content: flex-start;
+}
+
+.chat-right {
+    justify-content: flex-end;
+}
+
+.chat-msg-content {
+    background-color: #d3d8e4;
+    border-radius: 12px;
+    padding: 1em;
+    margin: 0.2em;
+}

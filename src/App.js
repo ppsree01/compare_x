@@ -9,6 +9,7 @@ import TopNav from './components/TopNav';
 import SelectBox from './components/SelectBox';
 import { useSelector, useDispatch } from 'react-redux';
 import { filter } from './features/filter/filterSlice';
+import Chat from './components/Chat';
 
 const App = () => {
 
@@ -19,6 +20,7 @@ const App = () => {
 
 	const monthly = useSelector((state) => state.filter.filteredMonthly);
 	const overall = useSelector((state) => state.filter.filteredOverall);
+
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -94,7 +96,6 @@ const App = () => {
 							<View heading={'Overall Comparison'} items={overall} />
 						</div> }
 					</div>
-
 				</div>
 			</div>
 		</div>

@@ -6,10 +6,12 @@ import reportWebVitals from './reportWebVitals';
 
 import store from './store/store';
 import { Provider } from 'react-redux';
+import Chat from './components/Chat';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+	<Chat />
 	<Provider store={store}>
     	<App />
 	</Provider>
