@@ -1,7 +1,5 @@
 import './View.css';
-import { randomize } from '../utils/utils';
 
-// should return a heading, and a list of the comparisons obtained with icons for bugs / information
 const View = ({ heading, items, productOne, productTwo }) => {
 
     const bugItem = <img src='/images/bug_icon.png' width='20' height='20' />

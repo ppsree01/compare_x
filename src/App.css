@@ -36,3 +36,9 @@
 	color: red;
 	font-weight: bold;
 }
+
+@media only screen and (max-width: 800px) {
+	.app-view {
+		margin: 1em 4em 1em 4em;
+	}
+}

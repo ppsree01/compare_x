@@ -1,5 +1,4 @@
 import './SelectBox.css';
-// select box:
 
 const SelectBox = ({ selected, options, handleSelectionChange }) => {
 
