@@ -14,7 +14,7 @@ Running the above code locally generates a UI that looks like the below:
 | 4 | Required | Monthly and Overall View | Based on the selection made on Products and Search box, the view should filter the search results. Product Selection overrides text search, but retains Month search |
 | 5 | Bonus | Chat-bot | A chat-bot appears at the bottom right corner of the UI available on click of a button |
 | 6 | Bonus | Side Nav Expand on hover | Side nav expands on hover in desktop view ( or click on tablet view ) and displays details of the navigation |
-| 7 | Bonus | TopNav Download Report button implementation | Downloads a report on click |
+| 7 | Bonus | TopNav Download Report button implementation | Downloads a the current view as a csv file on click |
 
 ## Note:
 The UI is currently configured for desktop and tablet ( landscape ) mode.
