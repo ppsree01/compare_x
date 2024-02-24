@@ -34,3 +34,8 @@
     margin-left: 2em;
 }
 
+.sidenav-menu-selected {
+    font-weight: bold;
+    color: #F24634;
+    margin-left: 2em;
+}

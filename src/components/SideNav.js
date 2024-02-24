@@ -17,7 +17,7 @@ const SideNav = () => {
                 { menu.map( (item, index) => 
                     <div key={index} className="sidenav-menu-item">
                         <img width='20' src={ item.selected ? item.active : item.inactive } />
-                        <span className='sidenav-menu-label'>{ expanded && item.nav }</span>
+                        <span className={item.selected ? 'sidenav-menu-selected' : 'sidenav-menu-label'}>{ expanded && item.nav }</span>
                     </div>
                 )}
             </div>

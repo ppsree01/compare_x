@@ -7,6 +7,7 @@ export const menu = [
     { inactive: '/images/python-icon-inactive.png', active: '/images/python-icon-active.png', nav: 'Python', selected: false },
     { inactive: '/images/R-icon-inactive.png', active: '/images/R-icon-active.png', nav: 'R', selected: false },
     { inactive: '/images/java-icon-inactive.png', active: '/images/java-icon-active.png', nav: 'Java', selected: false },
+    { inactive: '/images/scala-icon-inactive.png', active: '/images/scala-icon-active.png', nav: 'Scala', selected: false },
     { inactive: '/images/calendar-icon-inactive.png', active: '/images/calendar-icon-active.png', nav: 'Releases', selected: false },
 ]
 
