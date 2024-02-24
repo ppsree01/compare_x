@@ -20,6 +20,7 @@ const App = () => {
 
 	const monthly = useSelector((state) => state.filter.filteredMonthly);
 	const overall = useSelector((state) => state.filter.filteredOverall);
+
 	const dispatch = useDispatch();
 
 	useEffect(() => {

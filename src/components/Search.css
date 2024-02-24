@@ -5,12 +5,6 @@
     margin-top: 1em;
 }
 
-/* .search-icon {
-    background-color: white;
-    border: 1px solid white;
-    height: 2em;
-} */
-
 .search-input {
     width: 100%;
     height: 2em;
@@ -33,13 +27,9 @@
     padding: 0.5em;
     background-color: #f73622;
     color: white;
-}
-
-::-ms-input-placeholder {
-    padding-left: 1em;
+    width: 80px;
 }
 
 ::placeholder {
-    /* padding-left: 1em; */
     color: #9fa6b2;
 }
